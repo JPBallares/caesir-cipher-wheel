@@ -70,11 +70,12 @@ h1 {
 
 .inner-letters .letter span {
   position: absolute;
-  transform: rotate(calc(13.846deg * var(--i))) translateY(-11px);
+  transform: rotate(calc(13.846deg * var(--i))) translateY(11px);
   text-align: center;
   line-height: 20px;
   font-size: 0.8em;
   font-weight: bold;
+  inline-size: 18px;
 }
 
 .outer-letters .letter span {
@@ -84,6 +85,7 @@ h1 {
   line-height: 20px;
   font-size: 0.8em;
   font-weight: bold;
+  inline-size: 21px;
 }
 
 .inner-letters,
@@ -331,5 +333,7 @@ h1 {
   transform-origin: left center;
   transform: rotate(calc(13.846deg * var(--i))) translateX(-20px);
 }
+
+/* Rotate inner wheel */
 
 /*# sourceMappingURL=styles.css.map */

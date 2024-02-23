@@ -81,6 +81,7 @@ h1 {
     line-height: 20px;
     font-size: 0.8em;
     font-weight: bold;
+    inline-size: 18px;
 }
 
 .outer-letters .letter span {
@@ -90,6 +91,7 @@ h1 {
     line-height: 20px;
     font-size: 0.8em;
     font-weight: bold;
+    inline-size: 21px;
 }
 
 .inner-letters,
@@ -140,3 +142,14 @@ h1 {
     transform-origin: left center; // Set the origin of the transformation
     transform: rotate(calc(13.846deg * var(--i))) translateX(-20px); // Rotate and then move to the right
 }
+
+/* Rotate inner wheel */
+// .inner-wheel {
+//     animation: rotate-inner 5s linear infinite;
+// }
+
+// @keyframes rotate-inner {
+//     100% {
+//         transform: rotate(360deg);
+//     }
+// }
