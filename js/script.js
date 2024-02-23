@@ -1,7 +1,7 @@
 /**
  * Rotate the inner-wheel of the wheel when user clicks and drag the inner-circle
  */
-const ANGLE_PER_SHIFT = 360/26;
+const ANGLE_PER_SHIFT = 360 / 26;
 const innerCircle = document.getElementById('inner-wheel');
 const shiftInput = document.getElementById('shift');
 
@@ -11,7 +11,7 @@ shiftInput.addEventListener('input', updateRotation);
 
 function updateRotation() {
     let shift = shiftInput.value;
-    let rotation = shift * 13.846;
+    let rotation = shift * ANGLE_PER_SHIFT;
     innerCircle.style.transform = 'rotate(' + rotation + 'deg)';
 }
 
@@ -30,11 +30,11 @@ function startDrag(e) {
 
     function onMouseUp() {
         // Calculate the nearest multiple of ANGLE_PER_SHIFT
-        let shift = Math.round(lastRotation / ANGLE_PER_SHIFT)
+        let shift = Math.round(lastRotation / ANGLE_PER_SHIFT);
         let snappedRotation = shift * ANGLE_PER_SHIFT;
         innerCircle.style.transform = 'rotate(' + snappedRotation + 'deg)';
 
-        shiftInput.value = shift;
+        shiftInput.value = shift % 26;
 
         document.removeEventListener('mousemove', onMouseMove);
         document.removeEventListener('mouseup', onMouseUp);
