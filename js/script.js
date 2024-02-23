@@ -20,6 +20,10 @@ function startDrag(e) {
     }
 
     function onMouseUp() {
+        // Calculate the nearest multiple of 13.846deg
+        let snappedRotation = Math.round(lastRotation / 13.846) * 13.846;
+        innerCircle.style.transform = 'rotate(' + snappedRotation + 'deg)';
+
         document.removeEventListener('mousemove', onMouseMove);
         document.removeEventListener('mouseup', onMouseUp);
         document.removeEventListener('touchmove', onMouseMove);

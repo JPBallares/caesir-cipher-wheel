@@ -58,14 +58,14 @@ h1 {
   width: 240px;
   height: 240px;
   background-color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s;
 }
 
 .letter {
   position: absolute;
   width: 20px;
   height: 20px;
-  cursor: pointer;
-  transition: transform 0.3s;
 }
 
 .inner-letters .letter span {
