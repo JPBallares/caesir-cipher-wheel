@@ -8,6 +8,7 @@ The project is structured as follows:
 
 - `index.html`: This is the main HTML file that provides the structure of the web page.
 - `css/styles.css`: This is the CSS file that contains styles for the web page.
+- `css/styles.scss`: This is the Sass file that we modify and compile to styles.css.
 - `js/script.js`: This is the JavaScript file that adds interactivity to the web page.
 
 ## Usage
