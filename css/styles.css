@@ -88,23 +88,22 @@ h1 {
   height: 20px;
 }
 
-#inner-letters .letter span {
+#inner-letters .letter span,
+#outer-letters .letter span {
   position: absolute;
-  transform: rotate(calc(13.8461538462deg * var(--i))) translateY(11px);
   text-align: center;
   line-height: 20px;
   font-size: 0.8em;
   font-weight: bold;
+}
+
+#inner-letters .letter span {
+  transform: rotate(calc(13.8461538462deg * var(--i))) translateY(11px);
   inline-size: 18px;
 }
 
 #outer-letters .letter span {
-  position: absolute;
   transform: rotate(calc(13.8461538462deg * var(--i))) translateY(17px);
-  text-align: center;
-  line-height: 20px;
-  font-size: 0.8em;
-  font-weight: bold;
   inline-size: 21px;
 }
 
