@@ -34,7 +34,8 @@ function startDrag(e) {
         let snappedRotation = shift * ANGLE_PER_SHIFT;
         innerCircle.style.transform = 'rotate(' + snappedRotation + 'deg)';
 
-        shiftInput.value = shift % 26;
+        // shiftInput.value = shift % 26;
+        shiftInput.value = shift;
 
         document.removeEventListener('mousemove', onMouseMove);
         document.removeEventListener('mouseup', onMouseUp);

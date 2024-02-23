@@ -29,7 +29,7 @@ h1 {
 }
 
 /* Cipher Wheel */
-.cipher-wheel {
+#cipher-wheel {
     position: relative;
     width: 300px;
     height: 300px;
@@ -38,23 +38,23 @@ h1 {
     margin: 50px auto;
 }
 
-.inner-wheel,
-.outer-wheel {
+#inner-wheel,
+#outer-wheel {
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
 }
 
-/* Inner wheel should be smaller than outer wheel */
-.outer-wheel {
+#outer-wheel {
     position: relative;
     width: 100%;
     height: 100%;
     background-color: #f5f5f5;
 }
 
-.inner-wheel {
+/* Inner wheel should be smaller than outer wheel */
+#inner-wheel {
     width: 240px;
     height: 240px;
     background-color: #fff;
@@ -91,7 +91,7 @@ h1 {
     height: 20px;
 }
 
-.inner-letters .letter span {
+#inner-letters .letter span {
     position: absolute;
     transform: rotate(calc(360deg/26 * var(--i))) translateY(11px);
     text-align: center;
@@ -101,7 +101,7 @@ h1 {
     inline-size: 18px;
 }
 
-.outer-letters .letter span {
+#outer-letters .letter span {
     position: absolute;
     transform: rotate(calc(360deg/26 * var(--i))) translateY(17px);
     text-align: center;
@@ -111,8 +111,8 @@ h1 {
     inline-size: 21px;
 }
 
-.inner-letters,
-.outer-letters {
+#inner-letters,
+#outer-letters {
     position: absolute;
     top: 0;
     left: 0;
@@ -124,31 +124,31 @@ h1 {
 }
 
 /* Position each letter along the circle */
-.inner-letters .letter {
+#inner-letters .letter {
     --i: calc(var(--rotate) * 1);
     transform: rotate(calc(360deg/26 * var(--i))) translate(100px) rotate(calc(-360deg/26 * var(--i)));
 }
 
-.outer-letters .letter {
+#outer-letters .letter {
     --i: calc(var(--rotate) * 1);
     transform: rotate(calc(360deg/26 * var(--i))) translate(135px) rotate(calc(-360deg/26 * var(--i)));
 }
 
 /* Increment the rotation for each subsequent letter */
 @for $i from 1 through 26 {
-    .inner-letters .letter:nth-child(#{$i}) {
+    #inner-letters .letter:nth-child(#{$i}) {
         --rotate: #{$i - 1};
     }
 
-    .outer-letters .letter:nth-child(#{$i}) {
+    #outer-letters .letter:nth-child(#{$i}) {
         --rotate: #{$i - 1};
     }
 }
 
 /* Draw lines between each letters to separate them from each other*/
 
-.inner-letters .letter::before,
-.outer-letters .letter::before {
+#inner-letters .letter::before,
+#outer-letters .letter::before {
     content: '';
     position: absolute;
     width: 43px;
@@ -160,7 +160,7 @@ h1 {
     transform: rotate(calc(360deg/26 * var(--i))) translateX(-23px); // Rotate and then move to the right
 }
 
-.outer-letters .letter::before {
+#outer-letters .letter::before {
     width: 46px;
     transform: rotate(calc(360deg/26 * var(--i))) translateX(-30px);
 }
