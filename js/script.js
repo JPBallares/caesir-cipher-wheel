@@ -91,3 +91,57 @@ function getRotation(element) {
     const match = transform.match(/rotate\(([^)]+)deg\)/);
     return match ? parseFloat(match[1]) : 0;
 }
+
+/* Decrypt the message from the textarea */
+const decryptInput = document.getElementById('decrypt-input');
+const decryptOutput = document.getElementById('decrypt-output');
+const decryptButton = document.getElementById('decrypt-button');
+
+decryptButton.addEventListener('click', decrypt);
+
+function decrypt() {
+    const shift = parseInt(shiftInput.value);
+    const message = decryptInput.value.toUpperCase();
+    const decryptedMessage = message.split('').map(letter => {
+        const index = letters.indexOf(letter);
+        if (index === -1) {
+            return letter;
+        }
+        const shiftedIndex = (index - shift + 26) % 26;
+        console.log({ index, shiftedIndex, letter: letters[shiftedIndex] })
+        return letters[shiftedIndex];
+    }).join('');
+    decryptOutput.value = decryptedMessage;
+}
+
+/* Encrypt the message from the textarea */
+const encryptInput = document.getElementById('encrypt-input');
+const encryptOutput = document.getElementById('encrypt-output');
+const encryptButton = document.getElementById('encrypt-button');
+
+encryptButton.addEventListener('click', encrypt);
+
+function encrypt() {
+    const shift = parseInt(shiftInput.value);
+    const message = encryptInput.value.toUpperCase();
+    const encryptedMessage = message.split('').map(letter => {
+        const index = letters.indexOf(letter);
+        if (index === -1) {
+            return letter;
+        }
+        const shiftedIndex = (index + shift) % 26;
+        return letters[shiftedIndex];
+    }).join('');
+    encryptOutput.value = encryptedMessage;
+}
+
+/* Clear the text area */
+const clearButton = document.getElementById('clear-button');
+clearButton.addEventListener('click', clear);
+
+function clear() {
+    encryptInput.value = '';
+    encryptOutput.value = '';
+    decryptInput.value = '';
+    decryptOutput.value = '';
+}
