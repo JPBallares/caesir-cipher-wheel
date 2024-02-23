@@ -31,8 +31,8 @@ h1 {
 /* Cipher Wheel */
 .cipher-wheel {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     border: 1px solid black;
     border-radius: 50%;
     margin: 50px auto;
@@ -56,8 +56,8 @@ h1 {
 }
 
 .inner-wheel {
-    width: 80%;
-    height: 80%;
+    width: 240px;
+    height: 240px;
     background-color: #fff;
 }
 
@@ -66,16 +66,30 @@ h1 {
     position: absolute;
     width: 20px;
     height: 20px;
-    text-align: center;
-    line-height: 20px;
-    border-radius: 50%;
 
-    background-color: #333;
-    color: white;
-    font-size: 0.8em;
-    font-weight: bold;
+    // border-radius: 50%;
+    // color: white;
+    // background-color: #333;
     cursor: pointer;
     transition: transform 0.3s;
+}
+
+.inner-letters .letter span {
+    position: absolute;
+    transform: rotate(calc(13.846deg * var(--i))) translateY(11px);
+    text-align: center;
+    line-height: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.outer-letters .letter span {
+    position: absolute;
+    transform: rotate(calc(13.846deg * var(--i))) translateY(17px);
+    text-align: center;
+    line-height: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
 }
 
 .inner-letters,
@@ -114,8 +128,8 @@ h1 {
 
 /* Draw lines between each letters to separate them from each other*/
 
-.inner-letters .letter::after,
-.outer-letters .letter::after {
+.inner-letters .letter::before,
+.outer-letters .letter::before {
     content: '';
     position: absolute;
     width: 35px;
@@ -124,5 +138,5 @@ h1 {
     top: 50%; // Align vertically to the center
     left: 50%; // Align horizontally to the center
     transform-origin: left center; // Set the origin of the transformation
-    transform: rotate(calc(13.846deg * var(--i))) translate(-20px, 12px); // Rotate and then move to the right
+    transform: rotate(calc(13.846deg * var(--i))) translateX(-20px); // Rotate and then move to the right
 }
