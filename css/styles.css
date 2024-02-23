@@ -1,0 +1,335 @@
+/* This is the main CSS file for the project */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+/* Cipher Wheel */
+.cipher-wheel {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin: 50px auto;
+}
+
+.inner-wheel,
+.outer-wheel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transform: rotate(-14deg);
+}
+
+/* Inner wheel should be smaller than outer wheel */
+.outer-wheel {
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5;
+}
+
+.inner-wheel {
+  width: 240px;
+  height: 240px;
+  background-color: #fff;
+}
+
+.letter {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.inner-letters .letter span {
+  position: absolute;
+  transform: rotate(calc(13.846deg * var(--i))) translateY(-11px);
+  text-align: center;
+  line-height: 20px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.outer-letters .letter span {
+  position: absolute;
+  transform: rotate(calc(13.846deg * var(--i))) translateY(17px);
+  text-align: center;
+  line-height: 20px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.inner-letters,
+.outer-letters {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Position each letter along the circle */
+.inner-letters .letter {
+  --i: calc(var(--rotate) * 1);
+  transform: rotate(calc(13.846deg * var(--i))) translate(100px) rotate(calc(-13.846deg * var(--i)));
+}
+
+.outer-letters .letter {
+  --i: calc(var(--rotate) * 1);
+  transform: rotate(calc(13.846deg * var(--i))) translate(135px) rotate(calc(-13.846deg * var(--i)));
+}
+
+/* Increment the rotation for each subsequent letter */
+.inner-letters .letter:nth-child(1) {
+  --rotate: 0;
+}
+
+.outer-letters .letter:nth-child(1) {
+  --rotate: 0;
+}
+
+.inner-letters .letter:nth-child(2) {
+  --rotate: 1;
+}
+
+.outer-letters .letter:nth-child(2) {
+  --rotate: 1;
+}
+
+.inner-letters .letter:nth-child(3) {
+  --rotate: 2;
+}
+
+.outer-letters .letter:nth-child(3) {
+  --rotate: 2;
+}
+
+.inner-letters .letter:nth-child(4) {
+  --rotate: 3;
+}
+
+.outer-letters .letter:nth-child(4) {
+  --rotate: 3;
+}
+
+.inner-letters .letter:nth-child(5) {
+  --rotate: 4;
+}
+
+.outer-letters .letter:nth-child(5) {
+  --rotate: 4;
+}
+
+.inner-letters .letter:nth-child(6) {
+  --rotate: 5;
+}
+
+.outer-letters .letter:nth-child(6) {
+  --rotate: 5;
+}
+
+.inner-letters .letter:nth-child(7) {
+  --rotate: 6;
+}
+
+.outer-letters .letter:nth-child(7) {
+  --rotate: 6;
+}
+
+.inner-letters .letter:nth-child(8) {
+  --rotate: 7;
+}
+
+.outer-letters .letter:nth-child(8) {
+  --rotate: 7;
+}
+
+.inner-letters .letter:nth-child(9) {
+  --rotate: 8;
+}
+
+.outer-letters .letter:nth-child(9) {
+  --rotate: 8;
+}
+
+.inner-letters .letter:nth-child(10) {
+  --rotate: 9;
+}
+
+.outer-letters .letter:nth-child(10) {
+  --rotate: 9;
+}
+
+.inner-letters .letter:nth-child(11) {
+  --rotate: 10;
+}
+
+.outer-letters .letter:nth-child(11) {
+  --rotate: 10;
+}
+
+.inner-letters .letter:nth-child(12) {
+  --rotate: 11;
+}
+
+.outer-letters .letter:nth-child(12) {
+  --rotate: 11;
+}
+
+.inner-letters .letter:nth-child(13) {
+  --rotate: 12;
+}
+
+.outer-letters .letter:nth-child(13) {
+  --rotate: 12;
+}
+
+.inner-letters .letter:nth-child(14) {
+  --rotate: 13;
+}
+
+.outer-letters .letter:nth-child(14) {
+  --rotate: 13;
+}
+
+.inner-letters .letter:nth-child(15) {
+  --rotate: 14;
+}
+
+.outer-letters .letter:nth-child(15) {
+  --rotate: 14;
+}
+
+.inner-letters .letter:nth-child(16) {
+  --rotate: 15;
+}
+
+.outer-letters .letter:nth-child(16) {
+  --rotate: 15;
+}
+
+.inner-letters .letter:nth-child(17) {
+  --rotate: 16;
+}
+
+.outer-letters .letter:nth-child(17) {
+  --rotate: 16;
+}
+
+.inner-letters .letter:nth-child(18) {
+  --rotate: 17;
+}
+
+.outer-letters .letter:nth-child(18) {
+  --rotate: 17;
+}
+
+.inner-letters .letter:nth-child(19) {
+  --rotate: 18;
+}
+
+.outer-letters .letter:nth-child(19) {
+  --rotate: 18;
+}
+
+.inner-letters .letter:nth-child(20) {
+  --rotate: 19;
+}
+
+.outer-letters .letter:nth-child(20) {
+  --rotate: 19;
+}
+
+.inner-letters .letter:nth-child(21) {
+  --rotate: 20;
+}
+
+.outer-letters .letter:nth-child(21) {
+  --rotate: 20;
+}
+
+.inner-letters .letter:nth-child(22) {
+  --rotate: 21;
+}
+
+.outer-letters .letter:nth-child(22) {
+  --rotate: 21;
+}
+
+.inner-letters .letter:nth-child(23) {
+  --rotate: 22;
+}
+
+.outer-letters .letter:nth-child(23) {
+  --rotate: 22;
+}
+
+.inner-letters .letter:nth-child(24) {
+  --rotate: 23;
+}
+
+.outer-letters .letter:nth-child(24) {
+  --rotate: 23;
+}
+
+.inner-letters .letter:nth-child(25) {
+  --rotate: 24;
+}
+
+.outer-letters .letter:nth-child(25) {
+  --rotate: 24;
+}
+
+.inner-letters .letter:nth-child(26) {
+  --rotate: 25;
+}
+
+.outer-letters .letter:nth-child(26) {
+  --rotate: 25;
+}
+
+/* Draw lines between each letters to separate them from each other*/
+.inner-letters .letter::before,
+.outer-letters .letter::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 1px;
+  background-color: #333;
+  top: 50%;
+  left: 50%;
+  transform-origin: left center;
+  transform: rotate(calc(13.846deg * var(--i))) translateX(-20px);
+}
+
+/*# sourceMappingURL=styles.css.map */
